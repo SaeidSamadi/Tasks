@@ -1791,7 +1791,7 @@ int NetWrenchTask::dim()
 {
   return 3;
 }
-
+//trial
 void NetWrenchTask::update(const std::vector<rbd::MultiBody> & mbs,
                           const std::vector<rbd::MultiBodyConfig> & mbcs,
                           const SolverData & data)
