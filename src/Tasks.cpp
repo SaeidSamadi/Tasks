@@ -1608,4 +1608,45 @@ const Eigen::MatrixXd & VectorOrientationTask::jac() const
   return jacMat_;
 }
 
+/**
+ *													NetWrenchTask
+ */
+
+NetWrenchTask::NetWrenchTask(const rbd::MultiBody & mb,
+                           const std::string & bodyName)
+: bodyIndex_(mb.bodyIndexByName(bodyName)), eval_(3),
+  speed_(3), normalAcc_(3), jacMat_(3, mb.nrDof()), jacDotMat_(3, mb.nrDof())
+{
+}
+
+void NetWrenchTask::update(const rbd::MultiBody & mb, const rbd::MultiBodyConfig & mbc)
+{
+}
+
+
+const Eigen::VectorXd & NetWrenchTask::eval() const
+{
+  return eval_;
+}
+
+const Eigen::VectorXd & NetWrenchTask::speed() const
+{
+  return speed_;
+}
+
+const Eigen::VectorXd & NetWrenchTask::normalAcc() const
+{
+  return normalAcc_;
+}
+
+const Eigen::MatrixXd & NetWrenchTask::jac() const
+{
+  return jacMat_;
+}
+
+const Eigen::MatrixXd & NetWrenchTask::jacDot() const
+{
+  return jacDotMat_;
+}
+
 } // namespace tasks

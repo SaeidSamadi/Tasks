@@ -1776,6 +1776,49 @@ const Eigen::VectorXd & VectorOrientationTask::normalAcc()
   return vot_.normalAcc();
 }
 
+/**
+ *											NetWrenchTask
+ */
+
+NetWrenchTask::NetWrenchTask(const std::vector<rbd::MultiBody> & mbs,
+                                             int robotIndex,
+                                             const std::string & bodyName)
+: nwt_(mbs[robotIndex], bodyName), robotIndex_(robotIndex)
+{
+}
+
+int NetWrenchTask::dim()
+{
+  return 3;
+}
+
+void NetWrenchTask::update(const std::vector<rbd::MultiBody> & mbs,
+                          const std::vector<rbd::MultiBodyConfig> & mbcs,
+                          const SolverData & data)
+{
+  //nwt_.update(mbs[robotIndex_], mbcs[robotIndex_], data.normalAccB(robotIndex_));
+  nwt_.update(mbs[robotIndex_], mbcs[robotIndex_]);
+}
+
+const Eigen::MatrixXd & NetWrenchTask::jac()
+{
+  return nwt_.jac();
+}
+
+const Eigen::VectorXd & NetWrenchTask::eval()
+{
+  return nwt_.eval();
+}
+
+const Eigen::VectorXd & NetWrenchTask::speed()
+{
+  return nwt_.speed();
+}
+
+const Eigen::VectorXd & NetWrenchTask::normalAcc()
+{
+  return nwt_.normalAcc();
+}
 } // namespace qp
 
 } // namespace tasks

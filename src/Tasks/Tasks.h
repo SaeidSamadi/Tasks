@@ -684,4 +684,32 @@ private:
   Eigen::MatrixXd jacMat_;
 };
 
+class TASKS_DLLAPI NetWrenchTask
+{
+public:
+  NetWrenchTask(const rbd::MultiBody & mb,
+               const std::string & bodyName);
+
+
+  void update(const rbd::MultiBody & mb, const rbd::MultiBodyConfig & mbc);
+  void updateDot(const rbd::MultiBody & mb, const rbd::MultiBodyConfig & mbc);
+
+  const Eigen::VectorXd & eval() const;
+  const Eigen::VectorXd & speed() const;
+  const Eigen::VectorXd & normalAcc() const;
+
+  const Eigen::MatrixXd & jac() const;
+  const Eigen::MatrixXd & jacDot() const;
+
+private:
+  int bodyIndex_;
+  rbd::Jacobian jac_;
+
+  Eigen::VectorXd eval_;
+  Eigen::VectorXd speed_;
+  Eigen::VectorXd normalAcc_;
+  Eigen::MatrixXd jacMat_;
+  Eigen::MatrixXd jacDotMat_;
+};
+
 } // namespace tasks

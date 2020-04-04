@@ -1351,6 +1351,32 @@ private:
   int robotIndex_;
 };
 
+class TASKS_DLLAPI NetWrenchTask : public HighLevelTask
+{
+public:
+  NetWrenchTask(const std::vector<rbd::MultiBody> & mbs,
+                        int robotIndex,
+                        const std::string & bodyName);
+
+  tasks::NetWrenchTask & task()
+  {
+    return nwt_;
+  }
+
+  virtual int dim() override;
+  virtual void update(const std::vector<rbd::MultiBody> & mb,
+                      const std::vector<rbd::MultiBodyConfig> & mbc,
+                      const SolverData & data) override;
+
+  virtual const Eigen::MatrixXd & jac() override;
+  virtual const Eigen::VectorXd & eval() override;
+  virtual const Eigen::VectorXd & speed() override;
+  virtual const Eigen::VectorXd & normalAcc() override;
+
+private:
+  tasks::NetWrenchTask nwt_;
+  int robotIndex_;
+};
 } // namespace qp
 
 } // namespace tasks
