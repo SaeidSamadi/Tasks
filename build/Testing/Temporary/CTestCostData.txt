@@ -1,0 +1,6 @@
+QPSolverTestUnit 6 0.181764
+QPMultiRobotTestUnit 6 0.0342148
+TasksTestUnit 7 0.00228742
+AllocationTestUnit 7 0.000913552
+test-tasks-python-bindings 4 0.223207
+---

@@ -1,0 +1,27 @@
+<map id="QPTasks.h" name="QPTasks.h">
+<area shape="rect" id="node4" href="$a00047.html" title="QPMotionConstr.h" alt="" coords="1725,80,1855,107"/>
+<area shape="rect" id="node11" href="$a00050.html" title="QPSolver.h" alt="" coords="861,155,951,181"/>
+<area shape="rect" id="node30" href="$a00059.html" title="Tasks.h" alt="" coords="1233,155,1302,181"/>
+<area shape="rect" id="node6" href="/usr/local/share/doc/RBDyn/doxygen-html/RBDyn.doxytag$a00335.html" title="RBDyn/FD.h" alt="" coords="1925,155,2023,181"/>
+<area shape="rect" id="node7" href="/usr/local/share/doc/RBDyn/doxygen-html/RBDyn.doxytag$a00356.html" title="RBDyn/Jacobian.h" alt="" coords="1645,304,1777,331"/>
+<area shape="rect" id="node8" href="/usr/local/share/doc/RBDyn/doxygen-html/RBDyn.doxytag$a00365.html" title="MultiBody.h" alt="" coords="1666,379,1757,405"/>
+<area shape="rect" id="node9" href="/usr/local/share/doc/RBDyn/doxygen-html/RBDyn.doxytag$a00320.html" title="Body.h" alt="" coords="1724,453,1787,480"/>
+<area shape="rect" id="node10" href="/usr/local/share/doc/RBDyn/doxygen-html/RBDyn.doxytag$a00359.html" title="Joint.h" alt="" coords="1638,453,1699,480"/>
+<area shape="rect" id="node16" href="$a00044.html" title="QPContacts.h" alt="" coords="699,304,804,331"/>
+<area shape="rect" id="node29" href="$a00053.html" title="QPSolverData.h" alt="" coords="530,229,647,256"/>
+<area shape="rect" id="node17" href="/usr/local/share/doc/SpaceVecAlg/doxygen-html/SpaceVecAlg.doxytag$a00059.html" title="SpaceVecAlg/SpaceVecAlg" alt="" coords="594,379,778,405"/>
+<area shape="rect" id="node18" href="/usr/local/share/doc/SpaceVecAlg/doxygen-html/SpaceVecAlg.doxytag$a00032.html" title="EigenTypedef.h" alt="" coords="5,453,119,480"/>
+<area shape="rect" id="node19" href="/usr/local/share/doc/SpaceVecAlg/doxygen-html/SpaceVecAlg.doxytag$a00035.html" title="EigenUtility.h" alt="" coords="143,453,243,480"/>
+<area shape="rect" id="node20" href="/usr/local/share/doc/SpaceVecAlg/doxygen-html/SpaceVecAlg.doxytag$a00044.html" title="MathFunc.h" alt="" coords="267,453,358,480"/>
+<area shape="rect" id="node21" href="/usr/local/share/doc/SpaceVecAlg/doxygen-html/SpaceVecAlg.doxytag$a00023.html" title="ABInertia.h" alt="" coords="383,453,469,480"/>
+<area shape="rect" id="node22" href="/usr/local/share/doc/SpaceVecAlg/doxygen-html/SpaceVecAlg.doxytag$a00026.html" title="AdmittanceVec.h" alt="" coords="494,453,617,480"/>
+<area shape="rect" id="node23" href="/usr/local/share/doc/SpaceVecAlg/doxygen-html/SpaceVecAlg.doxytag$a00038.html" title="ForceVec.h" alt="" coords="641,453,731,480"/>
+<area shape="rect" id="node24" href="/usr/local/share/doc/SpaceVecAlg/doxygen-html/SpaceVecAlg.doxytag$a00041.html" title="ImpedanceVec.h" alt="" coords="755,453,875,480"/>
+<area shape="rect" id="node25" href="/usr/local/share/doc/SpaceVecAlg/doxygen-html/SpaceVecAlg.doxytag$a00047.html" title="MotionVec.h" alt="" coords="900,453,995,480"/>
+<area shape="rect" id="node26" href="/usr/local/share/doc/SpaceVecAlg/doxygen-html/SpaceVecAlg.doxytag$a00053.html" title="PTransform.h" alt="" coords="1019,453,1121,480"/>
+<area shape="rect" id="node27" href="/usr/local/share/doc/SpaceVecAlg/doxygen-html/SpaceVecAlg.doxytag$a00056.html" title="RBInertia.h" alt="" coords="1145,453,1233,480"/>
+<area shape="rect" id="node28" href="/usr/local/share/doc/SpaceVecAlg/doxygen-html/SpaceVecAlg.doxytag$a00050.html" title="Operators.h" alt="" coords="1257,453,1347,480"/>
+<area shape="rect" id="node31" href="/usr/local/share/doc/RBDyn/doxygen-html/RBDyn.doxytag$a00323.html" title="RBDyn/CoM.h" alt="" coords="1568,229,1676,256"/>
+<area shape="rect" id="node32" href="/usr/local/share/doc/RBDyn/doxygen-html/RBDyn.doxytag$a00362.html" title="RBDyn/Momentum.h" alt="" coords="1240,229,1385,256"/>
+<area shape="rect" id="node33" href="/usr/local/share/doc/RBDyn/doxygen-html/RBDyn.doxytag$a00374.html" title="RBDyn/VisServo.h" alt="" coords="1410,229,1543,256"/>
+</map>
