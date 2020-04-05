@@ -1,7 +1,0 @@
-<map id="tasks::qp::SetPointTaskCommon" name="tasks::qp::SetPointTaskCommon">
-<area shape="rect" id="node3" href="$a01132.html" title="tasks::qp::PIDTask" alt="" coords="448,5,584,32"/>
-<area shape="rect" id="node4" href="$a01120.html" title="tasks::qp::SetPointTask" alt="" coords="435,56,597,83"/>
-<area shape="rect" id="node5" href="$a01124.html" title="tasks::qp::TrackingTask" alt="" coords="435,107,597,133"/>
-<area shape="rect" id="node6" href="$a01128.html" title="tasks::qp::TrajectoryTask" alt="" coords="431,157,601,184"/>
-<area shape="rect" id="node2" href="$a01088.html" title="tasks::qp::Task" alt="" coords="5,81,119,108"/>
-</map>

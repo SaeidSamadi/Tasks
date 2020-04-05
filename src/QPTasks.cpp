@@ -1787,11 +1787,81 @@ NetWrenchTask::NetWrenchTask(const std::vector<rbd::MultiBody> & mbs,
 {
 }
 
+void NetWrenchTask::distributeWrench(const sva::ForceVecd & desiredWrench)
+{
+  // Variables
+  // ---------
+  // x = [w_l_0 w_r_0] where
+  // w_l_0: spatial force vector of left foot contact in inertial frame
+  // w_r_0: spatial force vector of right foot contact in inertial frame
+  //
+  // Objective
+  // ---------
+  // Weighted minimization of the following tasks:
+  // w_l_0 + w_r_0 == desiredWrench  -- realize desired contact wrench
+  // w_l_lankle == 0 -- minimize left foot ankle torque (anisotropic weight)
+  // w_r_rankle == 0 -- minimize right foot ankle torque (anisotropic weight)
+  // (1 - lfr) * w_l_lc.z() == lfr * w_r_rc.z()
+  //
+  // Constraints
+  // -----------
+  // CWC X_0_lc* w_l_0 <= 0  -- left foot wrench within contact wrench cone
+  // CWC X_0_rc* w_r_0 <= 0  -- right foot wrench within contact wrench cone
+  // (X_0_lc* w_l_0).z() > minPressure  -- minimum left foot contact pressure
+  // (X_0_rc* w_r_0).z() > minPressure  -- minimum right foot contact pressure
+  //using HrepXd = std::pair<Eigen::MatrixXd, Eigen::VectorXd>;
+
+  constexpr unsigned NB_VAR = 6 + 6;
+  constexpr unsigned COST_DIM = 6 + NB_VAR + 1;
+ // Eigen::MatrixXd A;
+ // Eigen::VectorXd b;
+ // A.setZero(COST_DIM, NB_VAR);
+ // b.setZero(COST_DIM);
+ // Eigen::MatrixXd G_bt(2,2);
+ 
+  // |w_l_0 + w_r_0 - desiredWrench|^2
+  //auto A_net = A.block<6, 12>(0, 0);
+  //auto b_net = b.segment<6>(0);
+  Eigen::MatrixXd A_net;
+  Eigen::VectorXd b_net;
+  A_net.setZero(6,12);
+  b_net.setZero(6);
+  A_net.block<6, 6>(0, 0) = Eigen::Matrix6d::Identity();
+  A_net.block<6, 6>(0, 6) = Eigen::Matrix6d::Identity();
+  b_net = desiredWrench.vector();
+  /*
+  // |ankle torques|^2
+  auto A_lankle = A.block<6, 6>(6, 0);
+  auto A_rankle = A.block<6, 6>(12, 6);
+  // anisotropic weights:  taux, tauy, tauz,   fx,   fy,   fz;
+  A_lankle.diagonal() << 1., 1., 1e-4, 1e-3, 1e-3, 1e-4;
+  A_rankle.diagonal() << 1., 1., 1e-4, 1e-3, 1e-3, 1e-4;
+  A_lankle *= X_0_lankle.dualMatrix();
+  A_rankle *= X_0_rankle.dualMatrix();
+
+  // |(1 - lfr) * w_l_lc.force().z() - lfr * w_r_rc.force().z()|^2
+  double lfr = leftFootRatio_;
+  auto A_pressure = A.block<1, 12>(18, 0);
+  A_pressure.block<1, 6>(0, 0) = (1 - lfr) * X_0_lc.dualMatrix().bottomRows<1>();
+  A_pressure.block<1, 6>(0, 6) = -lfr * X_0_rc.dualMatrix().bottomRows<1>();
+  */
+  // Apply weights
+  A_net *= c_.fdqpWeights.netWrenchSqrt;
+  b_net *= c_.fdqpWeights.netWrenchSqrt;
+  //A_lankle *= c_.fdqpWeights.ankleTorqueSqrt;
+  //A_rankle *= c_.fdqpWeights.ankleTorqueSqrt;
+  //A_pressure *= c_.fdqpWeights.pressureSqrt;
+
+  //Eigen::MatrixXd Q = A.transpose() * A;
+  //Eigen::VectorXd c = -A.transpose() * b;
+  Eigen::MatrixXd Q_ = A_net.transpose() * A_net;
+  Eigen::VectorXd C_ = -A_net.transpose() * b_net;
+}
 int NetWrenchTask::dim()
 {
   return 3;
 }
-//trial
+
 void NetWrenchTask::update(const std::vector<rbd::MultiBody> & mbs,
                           const std::vector<rbd::MultiBodyConfig> & mbcs,
                           const SolverData & data)

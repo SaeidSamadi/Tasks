@@ -1,7 +1,0 @@
-<map id="tasks::qp::SurfaceTransformTask" name="tasks::qp::SurfaceTransformTask">
-<area shape="rect" id="node2" href="$a01185.html" title="tasks::qp::TransformTask\lCommon\&lt; tasks::SurfaceTransform\lTask \&gt;" alt="" coords="38,260,269,316"/>
-<area shape="rect" id="node3" href="$a01101.html" title="tasks::qp::HighLevelTask" alt="" coords="5,171,176,197"/>
-<area shape="rect" id="node4" href="$a01265.html" title="tasks::SurfaceTransformTask" alt="" coords="200,171,395,197"/>
-<area shape="rect" id="node5" href="$a01261.html" title="tasks::TransformTaskCommon" alt="" coords="196,95,399,121"/>
-<area shape="rect" id="node6" href="/usr/local/share/doc/RBDyn/doxygen-html/RBDyn.doxytag$a00991.html" title="rbd::Jacobian" alt="" coords="247,5,347,32"/>
-</map>

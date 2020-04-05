@@ -1,4 +1,0 @@
-INPUT                  = /home/sasa/Softwares/Tasks/src /home/sasa/Softwares/Tasks/README.md
-USE_MDFILE_AS_MAINPAGE = /home/sasa/Softwares/Tasks/README.md
-IMAGE_PATH             = /home/sasa/Softwares/Tasks/doc/pictures
-FILE_PATTERNS          = *.h *.idl

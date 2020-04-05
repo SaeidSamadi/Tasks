@@ -15,6 +15,7 @@
 #include "QPMotionConstr.h"
 #include "QPSolver.h"
 #include "Tasks.h"
+#include <mc_rbdyn/dynamic_balancer/StabilizerConfiguration.h>
 
 // forward declaration
 // RBDyn
@@ -1362,7 +1363,8 @@ public:
   {
     return nwt_;
   }
-
+  void distributeWrench(const sva::ForceVecd & desiredWrench);
+  
   virtual int dim() override;
   virtual void update(const std::vector<rbd::MultiBody> & mb,
                       const std::vector<rbd::MultiBodyConfig> & mbc,
@@ -1372,7 +1374,8 @@ public:
   virtual const Eigen::VectorXd & eval() override;
   virtual const Eigen::VectorXd & speed() override;
   virtual const Eigen::VectorXd & normalAcc() override;
-
+protected:
+  mc_rbdyn::dynamic_balancer::StabilizerConfiguration c_;
 private:
   tasks::NetWrenchTask nwt_;
   int robotIndex_;
