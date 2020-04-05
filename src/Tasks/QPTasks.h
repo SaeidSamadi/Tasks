@@ -1374,6 +1374,8 @@ public:
   virtual const Eigen::VectorXd & eval() override;
   virtual const Eigen::VectorXd & speed() override;
   virtual const Eigen::VectorXd & normalAcc() override;
+  virtual const Eigen::MatrixXd & Q() ;
+  virtual const Eigen::VectorXd & C() const;
 protected:
   mc_rbdyn::dynamic_balancer::StabilizerConfiguration c_;
 private:

@@ -1868,8 +1868,18 @@ void NetWrenchTask::update(const std::vector<rbd::MultiBody> & mbs,
 {
   //nwt_.update(mbs[robotIndex_], mbcs[robotIndex_], data.normalAccB(robotIndex_));
   nwt_.update(mbs[robotIndex_], mbcs[robotIndex_]);
+  distributeWrench(/*desiredWrench*/);
 }
 
+//const Eigen::MatrixXd & NetWrenchTask::Q() const
+//{
+//  return distributeWrench().Q_;
+//}
+//
+//const Eigen::VectorXd & NetWrenchTask::C() const
+//{
+//  return C_;
+//}
 const Eigen::MatrixXd & NetWrenchTask::jac()
 {
   return nwt_.jac();
